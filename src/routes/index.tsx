@@ -21,7 +21,7 @@ const pillars = [
   {
     n: "03",
     title: "Gestão Financeira",
-    body: "Separação PF/PJ, precificação, indicadores e sustentabilidade financeira — método exclusivo Plan A.",
+    body: "Organização financeira da operação, separação PF/PJ, controle de despesas e receitas, cálculo da hora clínica e precificação estratégica. Construção de uma clínica financeiramente saudável e sustentável.",
   },
   {
     n: "04",
