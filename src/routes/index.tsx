@@ -25,8 +25,8 @@ const pillars = [
   },
   {
     n: "04",
-    title: "Processos & Equipe",
-    body: "POPs, gargalos operacionais, tecnologia de gestão e cultura de atendimento como melhor marketing.",
+    title: "Segurança Jurídica",
+    body: "Adequação jurídica da operação, contratos com fornecedores, pacientes e colaboradores. Proteção da clínica em todas as etapas do crescimento.",
   },
 ];
 
