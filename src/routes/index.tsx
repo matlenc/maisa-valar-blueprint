@@ -91,8 +91,8 @@ function Index() {
               estruture, blinde e cresça.
             </h1>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-[var(--muted-foreground)]">
-              Uma mentoria estratégica para profissionais da saúde que querem abrir, regularizar
-              e escalar uma clínica com solidez jurídica, financeira e operacional — guiada por
+              Uma mentoria estratégica para profissionais da saúde que querem abrir, organizar
+              e escalar uma clínica com solidez jurídica, financeira e operacional, guiada por
               quem vive isso há mais de 20 anos.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-5">
