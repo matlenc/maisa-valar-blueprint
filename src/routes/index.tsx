@@ -278,14 +278,16 @@ function Index() {
         <div className="mx-auto max-w-5xl px-6 text-center md:px-12">
           <div className="text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">Para quem</div>
           <h2 className="mt-6 font-serif-display text-balance text-5xl leading-[1.02] text-[var(--ink)] md:text-6xl">
-            Para a profissional da saúde que <em className="italic">decidiu profissionalizar</em> a própria clínica.
+            Para a profissional da saúde que decidiu transformar sua clínica em uma <em className="italic">operação estruturada, segura e sustentável.</em>
           </h2>
           <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-4 text-left sm:grid-cols-2">
             {[
-              "Quem quer abrir a primeira clínica com segurança",
-              "Quem já abriu mas se sente perdida no jurídico",
-              "Quem precisa regularizar Pasta Sanitária",
-              "Quem quer crescer sem virar refém da operação",
+              "Para quem quer abrir a primeira clínica com clareza e direcionamento estratégico",
+              "Para quem já atende, mas sente a operação desorganizada e sem estrutura de crescimento",
+              "Para quem deseja profissionalizar a gestão sem precisar dominar Administração, Direito ou Contabilidade",
+              "Para quem quer organizar processos, equipe, financeiro e responsabilidades da operação",
+              "Para quem busca crescer com segurança jurídica, previsibilidade financeira e visão empresarial",
+              "Para quem deseja deixar de apagar incêndios e assumir uma posição estratégica dentro da própria clínica",
             ].map((t) => (
               <div key={t} className="flex items-start gap-3 rounded-2xl border border-[var(--cream-deep)] bg-[var(--card)] p-5">
                 <span className="mt-1 h-2 w-2 rounded-full" style={{ background: "var(--sage)" }} />
