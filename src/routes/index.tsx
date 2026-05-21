@@ -38,12 +38,16 @@ const numbers = [
 ];
 
 const modules = [
-  "Material de apoio prático",
-  "Template exclusivo",
-  "Checklists estratégicos",
-  "Barra de progresso para acompanhamento da evolução",
-  "Encontros direcionados para tomada de decisão",
-  "Estruturação financeira, operacional e jurídica da clínica",
+  "Diagnóstico estratégico para reconhecer o momento atual da sua clínica ou operação",
+  "Alinhamento da agenda de trabalho e definição das fases da mentoria",
+  "Organização dos dados empresariais, financeiros, fornecedores e serviços",
+  "Estruturação da equipe, setores e documentação da operação",
+  "Desenvolvimento do organograma e fluxograma operacional da clínica",
+  "Definição das responsabilidades de cada cargo, materiais e ações corretivas",
+  "Organização das despesas, receitas e fluxo de caixa da operação",
+  "Cálculo da hora clínica e construção da precificação estratégica",
+  "Estruturação de extratos, relatórios gerenciais e análises financeiras",
+  "Projeção de faturamento para curto, médio e longo prazo",
 ];
 
 function Index() {
