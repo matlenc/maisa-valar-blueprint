@@ -244,10 +244,6 @@ function Index() {
                 programa entrega clareza estratégica e direcionamento em cada etapa da estruturação
                 de um negócio.
               </p>
-              <p className="mt-6 max-w-md text-sm leading-relaxed text-[var(--cream)]/70">
-                Tudo pensado para transformar dúvidas e improvisos em uma operação sólida, organizada
-                e sustentável.
-              </p>
               <div className="mt-12 rounded-2xl border border-[var(--cream)]/15 p-6">
                 <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--champagne)]">Bônus exclusivo</div>
                 <div className="mt-2 font-serif-display text-2xl">E-book Plan A + Mentor Estratégico</div>
@@ -261,6 +257,10 @@ function Index() {
                   <li>— Estruturação financeira, operacional e jurídica da clínica</li>
                 </ul>
               </div>
+              <p className="mt-6 max-w-md text-sm leading-relaxed text-[var(--cream)]/70">
+                Tudo pensado para transformar dúvidas e improvisos em uma operação sólida, organizada
+                e sustentável.
+              </p>
             </div>
             <div className="lg:col-span-7">
               <ol className="divide-y divide-[var(--cream)]/10 border-y border-[var(--cream)]/10">
