@@ -38,14 +38,12 @@ const numbers = [
 ];
 
 const modules = [
-  "Diagnóstico da sua ideia ou clínica em operação",
-  "Escolha do modelo de negócio e formalização",
-  "Pasta Sanitária — passo a passo aplicável",
-  "Contrato social, sócios e conselhos de classe",
-  "Plano financeiro, precificação e indicadores",
-  "POPs, TCLE e gestão de processos clínicos",
-  "Marketing, atendimento e fidelização de pacientes",
-  "Plano de ação 90 dias com acompanhamento",
+  "Material de apoio prático",
+  "Template exclusivo",
+  "Checklists estratégicos",
+  "Barra de progresso para acompanhamento da evolução",
+  "Encontros direcionados para tomada de decisão",
+  "Estruturação financeira, operacional e jurídica da clínica",
 ];
 
 function Index() {
@@ -234,11 +232,17 @@ function Index() {
             <div className="lg:col-span-5">
               <div className="text-[11px] uppercase tracking-[0.3em] text-[var(--champagne)]">O programa</div>
               <h2 className="mt-6 font-serif-display text-balance text-5xl leading-[1.02] md:text-6xl">
-                Do <em className="italic">papel à porta aberta</em> — e além.
+                Do sonho à <em className="italic">operação estruturada.</em>
               </h2>
               <p className="mt-8 max-w-md text-base leading-relaxed text-[var(--cream)]/75">
-                Um percurso prático, com material de apoio, templates de contrato, checklists
-                sanitários e o e-book exclusivo <em>Plan A — Guia Completo para Abrir sua Clínica</em>.
+                Um percurso prático para profissionais da saúde que desejam construir uma clínica
+                organizada, segura e preparada para crescer. Com acompanhamento personalizado, o
+                programa entrega clareza estratégica e direcionamento em cada etapa da estruturação
+                de um negócio.
+              </p>
+              <p className="mt-6 max-w-md text-sm leading-relaxed text-[var(--cream)]/70">
+                Tudo pensado para transformar dúvidas e improvisos em uma operação sólida, organizada
+                e sustentável.
               </p>
               <div className="mt-12 rounded-2xl border border-[var(--cream)]/15 p-6">
                 <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--champagne)]">Bônus exclusivo</div>
