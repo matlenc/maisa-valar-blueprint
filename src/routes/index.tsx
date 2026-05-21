@@ -38,14 +38,12 @@ const numbers = [
 ];
 
 const modules = [
-  "Diagnóstico da sua ideia ou clínica em operação",
-  "Escolha do modelo de negócio e formalização",
-  "Pasta Sanitária — passo a passo aplicável",
-  "Contrato social, sócios e conselhos de classe",
-  "Plano financeiro, precificação e indicadores",
-  "POPs, TCLE e gestão de processos clínicos",
-  "Marketing, atendimento e fidelização de pacientes",
-  "Plano de ação 90 dias com acompanhamento",
+  "Material de apoio prático",
+  "Template exclusivo",
+  "Checklists estratégicos",
+  "Barra de progresso para acompanhamento da evolução",
+  "Encontros direcionados para tomada de decisão",
+  "Estruturação financeira, operacional e jurídica da clínica",
 ];
 
 function Index() {
