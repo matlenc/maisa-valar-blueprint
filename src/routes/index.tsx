@@ -162,8 +162,11 @@ function Index() {
                 Quatro pilares para uma clínica que <em className="italic">opera, cresce e protege.</em>
               </h2>
               <p className="mt-8 max-w-md text-base leading-relaxed text-[var(--muted-foreground)]">
-                Você não precisa virar advogada, contadora e gestora ao mesmo tempo. Precisa de um
-                método. O Plan A entrega clareza onde antes só havia ruído: do CNPJ ao plano de 90 dias.
+                Você não precisa fazer faculdade de Administração, Direito e Contabilidade para gerir
+                sua clínica com segurança. A profissional da saúde precisa de estruturação empresarial,
+                clareza na direção e um plano estratégico que sustente o crescimento da operação.
+                Em 90 dias, organizamos os pilares essenciais para transformar decisões em crescimento
+                sólido, seguro e sustentável.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl bg-[var(--cream-deep)] sm:grid-cols-2 lg:col-span-7">
