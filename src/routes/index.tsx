@@ -11,7 +11,7 @@ const pillars = [
   {
     n: "01",
     title: "Estruturação da Clínica",
-    body: "Modelo de negócio, escolha do CNPJ ideal (MEI, SLU, EPP), Pasta Sanitária e regularização — do papel à porta aberta.",
+    body: "Modelo de negócio, definição do formato jurídico, contrato social, escolha do CNAE principal e enquadramento ideal. Da abertura ao funcionamento seguro e organizado da clínica.",
   },
   {
     n: "02",
