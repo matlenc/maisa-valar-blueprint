@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import maisaPortrait from "@/assets/maisa-valar.jpg";
+import maisaPortrait2 from "@/assets/maisa-valar-2.jpg";
 import planaLogo from "@/assets/plana-logo.jpg";
 
 export const Route = createFileRoute("/")({
@@ -189,7 +190,7 @@ function Index() {
           <div className="lg:col-span-5">
             <div className="relative">
               <div className="absolute -top-6 -left-6 h-32 w-32 rounded-full" style={{ background: "color-mix(in oklch, var(--sage) 25%, transparent)" }} />
-              <img src={maisaPortrait} alt="Maisa Valar" className="relative rounded-[1.75rem] object-cover shadow-2xl" />
+              <img src={maisaPortrait2} alt="Maisa Valar" className="relative rounded-[1.75rem] object-cover shadow-2xl" />
             </div>
           </div>
           <div className="lg:col-span-7">
