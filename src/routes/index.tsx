@@ -20,8 +20,8 @@ const pillars = [
   },
   {
     n: "03",
-    title: "Blindagem Jurídica",
-    body: "Contrato social, conselhos de classe, LGPD, contratos com pacientes e equipe. Segurança para crescer sem sustos.",
+    title: "Processos & Operação",
+    body: "Padronização de processos, estruturação dos setores, definição de responsáveis e organização das tarefas da equipe. Uma jornada da cliente clara, organizada e alinhada à experiência da clínica.",
   },
   {
     n: "04",
