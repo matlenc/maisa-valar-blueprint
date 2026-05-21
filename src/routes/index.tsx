@@ -15,13 +15,13 @@ const pillars = [
   },
   {
     n: "02",
-    title: "Blindagem Jurídica",
-    body: "Contrato social, conselhos de classe, LGPD, contratos com pacientes e equipe. Segurança para crescer sem sustos.",
+    title: "Gestão Financeira",
+    body: "Organização financeira da operação, separação PF/PJ, controle de despesas e receitas, cálculo da hora clínica e precificação estratégica. Construção de uma clínica financeiramente saudável e sustentável.",
   },
   {
     n: "03",
-    title: "Gestão Financeira",
-    body: "Organização financeira da operação, separação PF/PJ, controle de despesas e receitas, cálculo da hora clínica e precificação estratégica. Construção de uma clínica financeiramente saudável e sustentável.",
+    title: "Blindagem Jurídica",
+    body: "Contrato social, conselhos de classe, LGPD, contratos com pacientes e equipe. Segurança para crescer sem sustos.",
   },
   {
     n: "04",
