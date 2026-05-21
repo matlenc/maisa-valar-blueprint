@@ -251,10 +251,15 @@ function Index() {
               <div className="mt-12 rounded-2xl border border-[var(--cream)]/15 p-6">
                 <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--champagne)]">Bônus exclusivo</div>
                 <div className="mt-2 font-serif-display text-2xl">E-book Plan A + Mentor Estratégico</div>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--cream)]/70">
-                  Acesso ao guia completo e ao Mentor Estratégico Plan.A — uma inteligência de apoio
-                  à gestão para decisões mais claras, seguras e lucrativas.
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--cream)]/70">Você terá acesso a:</p>
+                <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-[var(--cream)]/70">
+                  <li>— Material de apoio prático</li>
+                  <li>— Template exclusivo</li>
+                  <li>— Checklists estratégicos</li>
+                  <li>— Barra de progresso para acompanhamento da evolução</li>
+                  <li>— Encontros direcionados para tomada de decisão</li>
+                  <li>— Estruturação financeira, operacional e jurídica da clínica</li>
+                </ul>
               </div>
             </div>
             <div className="lg:col-span-7">
