@@ -310,13 +310,19 @@ function Index() {
             }}
           />
           <div className="relative">
-            <div className="text-[11px] uppercase tracking-[0.3em] text-[var(--champagne)]">Turma exclusiva · 30 vagas</div>
+            <div className="text-[11px] uppercase tracking-[0.3em] text-[var(--champagne)]">Turma exclusiva · Vagas limitadas</div>
             <h2 className="mx-auto mt-6 max-w-3xl font-serif-display text-balance text-5xl leading-[1.02] md:text-6xl">
               Sua clínica merece um <em className="italic">Plano A.</em>
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-[var(--cream)]/75">
-              Garanta sua vaga na mentoria com Maisa Valar e saia com clareza, método e um plano
-              executável para os próximos 90 dias.
+            <p className="mx-auto mt-6 max-w-2xl text-[var(--cream)]/75">
+              Com a experiência de uma gestora de clínicas há 23 anos e advogada empresarial, Maisa
+              Valar irá transformar sua clínica em uma operação estruturada, segura e preparada
+              para crescer.
+            </p>
+            <p className="mx-auto mt-4 max-w-2xl text-[var(--cream)]/75">
+              Em 90 dias, você terá clareza estratégica, organização empresarial e um plano
+              executável para conduzir sua clínica com mais segurança, direção e sustentabilidade
+              financeira.
             </p>
             <a
               href="#"
