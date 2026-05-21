@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import maisaPortrait from "@/assets/maisa-valar.jpg";
-import maisaPortrait2 from "@/assets/maisa-valar-2.jpg";
+import maisaPortrait2 from "@/assets/maisa-valar-3.jpg";
 import planaLogo from "@/assets/plana-logo.jpg";
 
 export const Route = createFileRoute("/")({
@@ -196,7 +196,7 @@ function Index() {
           <div className="lg:col-span-7">
             <div className="text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">Quem é Maisa</div>
             <h2 className="mt-6 font-serif-display text-balance text-5xl leading-[1.02] text-[var(--ink)] md:text-6xl">
-              Coragem, resiliência e <em className="italic">visão estratégica.</em>
+              Coragem, resiliência, foco e <em className="italic">visão estratégica.</em>
             </h2>
             <div className="mt-8 space-y-5 text-base leading-relaxed text-[var(--muted-foreground)]">
               <p>
@@ -218,7 +218,7 @@ function Index() {
               </p>
             </div>
             <div className="mt-10 font-serif-display text-2xl italic text-[var(--sage-deep)]">
-              "Determinação, coragem e propósito caminhando juntos."
+              "Determinação, fé e propósito caminhando juntos."
             </div>
           </div>
         </div>
