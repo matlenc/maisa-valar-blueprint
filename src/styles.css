@@ -63,33 +63,33 @@
 
 :root {
   --radius: 0.625rem;
-  /* Plan.A brand: warm cream, sage-teal, soft champagne */
-  --background: oklch(0.965 0.012 85);
-  --foreground: oklch(0.28 0.018 200);
-  --card: oklch(0.985 0.008 85);
-  --card-foreground: oklch(0.28 0.018 200);
-  --popover: oklch(0.985 0.008 85);
-  --popover-foreground: oklch(0.28 0.018 200);
-  --primary: oklch(0.56 0.028 200);
-  --primary-foreground: oklch(0.975 0.012 85);
-  --secondary: oklch(0.93 0.018 80);
-  --secondary-foreground: oklch(0.32 0.022 200);
-  --muted: oklch(0.93 0.014 80);
-  --muted-foreground: oklch(0.48 0.018 200);
-  --accent: oklch(0.78 0.045 70);
-  --accent-foreground: oklch(0.22 0.018 200);
+  /* Plan.A brand: #182626, #5D7373, #F7F3EA, #C3CAC6, #CBC8C1 */
+  --background: oklch(0.968 0.037 45);
+  --foreground: oklch(0.26 0.012 186);
+  --card: oklch(0.975 0.030 45);
+  --card-foreground: oklch(0.26 0.012 186);
+  --popover: oklch(0.975 0.030 45);
+  --popover-foreground: oklch(0.26 0.012 186);
+  --primary: oklch(0.54 0.010 175);
+  --primary-foreground: oklch(0.968 0.037 45);
+  --secondary: oklch(0.836 0.031 45);
+  --secondary-foreground: oklch(0.26 0.012 186);
+  --muted: oklch(0.836 0.031 45);
+  --muted-foreground: oklch(0.54 0.010 175);
+  --accent: oklch(0.835 0.020 49);
+  --accent-foreground: oklch(0.26 0.012 186);
   --destructive: oklch(0.55 0.18 25);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.88 0.016 80);
-  --input: oklch(0.88 0.016 80);
-  --ring: oklch(0.56 0.028 200);
+  --border: oklch(0.836 0.031 45);
+  --input: oklch(0.836 0.031 45);
+  --ring: oklch(0.54 0.010 175);
   /* Brand custom tokens */
-  --cream: oklch(0.965 0.012 85);
-  --cream-deep: oklch(0.92 0.022 80);
-  --sage: oklch(0.56 0.028 200);
-  --sage-deep: oklch(0.42 0.024 200);
-  --champagne: oklch(0.82 0.05 70);
-  --ink: oklch(0.22 0.014 200);
+  --cream: oklch(0.968 0.037 45);
+  --cream-deep: oklch(0.836 0.031 45);
+  --sage: oklch(0.54 0.010 175);
+  --sage-deep: oklch(0.26 0.012 186);
+  --champagne: oklch(0.835 0.020 49);
+  --ink: oklch(0.26 0.012 186);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
