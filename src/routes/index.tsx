@@ -34,7 +34,7 @@ const numbers = [
   { v: "20+", l: "anos gerindo clínicas" },
   { v: "2004", l: "à frente do Centromédico" },
   { v: "OAB/SC", l: "advogada empresarial" },
-  { v: "Plan A", l: "sócia & método próprio" },
+  { v: "Plan.A", l: "sócia & método próprio" },
 ];
 
 const modules = [
@@ -56,7 +56,7 @@ function Index() {
       {/* NAV */}
       <header className="absolute top-0 left-0 right-0 z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-12">
-          <img src={planaLogo} alt="Grupo Plan A" className="h-12 w-12 rounded-full object-cover ring-1 ring-[var(--cream-deep)]" />
+          <img src={planaLogo} alt="Grupo Plan.A" className="h-12 w-12 rounded-full object-cover ring-1 ring-[var(--cream-deep)]" />
           <div className="hidden md:flex items-center gap-10 text-[11px] uppercase tracking-[0.22em] text-[var(--sage-deep)]">
             <a href="#mentoria" className="hover:text-[var(--ink)] transition">A Mentoria</a>
             <a href="#maisa" className="hover:text-[var(--ink)] transition">Maisa Valar</a>
@@ -86,7 +86,7 @@ function Index() {
           <div className="lg:col-span-7">
             <div className="mb-8 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">
               <span className="h-px w-10 bg-[var(--sage-deep)]" />
-              Mentoria exclusiva — Grupo Plan A
+              Mentoria exclusiva — Grupo Plan.A
             </div>
             <h1 className="font-serif-display text-balance text-[clamp(2.75rem,7vw,5.75rem)] leading-[0.98] text-[var(--ink)]">
               Da paixão à <em className="italic text-[var(--sage-deep)]">clínica de sucesso</em>:
@@ -106,7 +106,7 @@ function Index() {
                 <span className="transition group-hover:translate-x-1">→</span>
               </a>
               <a href="#mentoria" className="text-sm tracking-wide text-[var(--sage-deep)] underline underline-offset-4 decoration-1 hover:text-[var(--ink)]">
-                Conhecer o método Plan A
+                Conhecer o método Plan.A
               </a>
             </div>
             <div className="mt-14 grid grid-cols-2 gap-y-6 gap-x-8 sm:grid-cols-4">
@@ -136,7 +136,7 @@ function Index() {
               />
               <div className="absolute -left-6 bottom-10 hidden rounded-2xl bg-[var(--cream)] px-5 py-4 shadow-xl ring-1 ring-[var(--cream-deep)] md:block">
                 <div className="font-serif-display text-xl italic text-[var(--ink)]">Maisa Valar</div>
-                <div className="text-[10px] uppercase tracking-[0.22em] text-[var(--sage-deep)]">Sócia · Grupo Plan A</div>
+                <div className="text-[10px] uppercase tracking-[0.22em] text-[var(--sage-deep)]">Sócia · Grupo Plan.A</div>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ function Index() {
           <span>Fisioterapeuta</span><span>·</span>
           <span>Advogada OAB/SC</span><span>·</span>
           <span>Gestora desde 2004</span><span>·</span>
-          <span>Método Plan A</span><span>·</span>
+          <span>Método Plan.A</span><span>·</span>
           <span>Assessoria à Saúde</span>
         </div>
       </section>
@@ -211,7 +211,7 @@ function Index() {
               </p>
               <p>
                 Desde 2004 lidera o <span className="text-[var(--ink)]">Centromédico — Serviços de Saúde</span>,
-                empresa da família. Sócia do <span className="text-[var(--ink)]">Grupo Plan A</span>, criou um
+                empresa da família. Sócia do <span className="text-[var(--ink)]">Grupo Plan.A</span>, criou um
                 método exclusivo de gestão que transforma empresas, gera crescimento sustentável e
                 inspira profissionais a superarem as limitações da gestão.
               </p>
@@ -246,7 +246,7 @@ function Index() {
               </p>
               <div className="mt-12 rounded-2xl border border-[var(--cream)]/15 p-6">
                 <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--champagne)]">Bônus exclusivo</div>
-                <div className="mt-2 font-serif-display text-2xl">E-book Plan A + Mentor Estratégico</div>
+                <div className="mt-2 font-serif-display text-2xl">E-book Plan.A + Mentor Estratégico</div>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--cream)]/70">Você terá acesso a:</p>
                 <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-[var(--cream)]/70">
                   <li>— Material de apoio prático</li>
@@ -346,8 +346,8 @@ function Index() {
       <footer className="border-t border-[var(--cream-deep)] py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 text-[11px] uppercase tracking-[0.22em] text-[var(--muted-foreground)] md:flex-row md:px-12">
           <div className="flex items-center gap-3">
-            <img src={planaLogo} alt="Grupo Plan A" className="h-9 w-9 rounded-full object-cover" />
-            <span>Grupo Plan A · Maisa Valar</span>
+            <img src={planaLogo} alt="Grupo Plan.A" className="h-9 w-9 rounded-full object-cover" />
+            <span>Grupo Plan.A · Maisa Valar</span>
           </div>
           <div>© {new Date().getFullYear()} · Mentoria de Estruturação Clínica</div>
         </div>
