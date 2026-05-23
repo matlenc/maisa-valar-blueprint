@@ -1,22 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import maisaPortrait from "@/assets/maisa-valar.jpg";
-import planaLogo from "@/assets/plana-logo.jpg";
 import ebookCover from "@/assets/ebook-cover.jpg";
 
 export const Route = createFileRoute("/ebook")({
   head: () => ({
     meta: [
-      { title: "Ebook Plan.A — Guia Completo para Abrir Sua Clínica" },
+      { title: "Ebook Plan.A — Abra Sua Clínica com Método | Maisa Valar" },
       {
         name: "description",
         content:
-          "O guia definitivo, escrito por Maisa Valar, para abrir, estruturar e regularizar sua clínica com segurança jurídica, financeira e operacional.",
+          "O guia editorial definitivo para abrir e estruturar sua clínica com segurança jurídica, financeira e sanitária. Por Maisa Valar — Grupo Plan.A.",
       },
       { property: "og:title", content: "Ebook Plan.A — Abra sua clínica com método" },
       {
         property: "og:description",
         content:
-          "Da escolha do CNPJ à pasta sanitária, do plano financeiro à gestão de processos. O passo a passo que Maisa Valar usa há mais de 20 anos.",
+          "Da escolha do CNPJ à Vigilância Sanitária, do plano financeiro à precificação. Acesso imediato via Kiwify.",
       },
     ],
   }),
@@ -25,235 +24,381 @@ export const Route = createFileRoute("/ebook")({
 
 const CHECKOUT_URL = "https://kiwify.com.br/"; // TODO: substituir pelo link real do Kiwify
 
-const chapters = [
-  { n: "01", title: "Primeiros Passos", body: "Resumo executivo, estrutura organizacional, jurídica e plano de marketing da clínica." },
-  { n: "02", title: "Modelo de Negócio", body: "MEI, Sociedade Unipessoal, EPP, franquia: como escolher o formato ideal e evitar erros caros." },
-  { n: "03", title: "Passo a Passo para Abrir", body: "Da ideia ao CNPJ ativo: contrato social, registros nos conselhos e formalização sem dor de cabeça." },
-  { n: "04", title: "Pasta Sanitária", body: "Todos os documentos exigidos pela Vigilância Sanitária, alvarás, laudos técnicos e POPs." },
-  { n: "05", title: "Gestão de Processos", body: "Como identificar e eliminar gargalos, padronizar fluxos e usar tecnologia como aliada." },
-  { n: "06", title: "Sustentabilidade Financeira", body: "Separação PF/PJ, fluxo de caixa, precificação e crescimento sólido a longo prazo." },
-  { n: "07", title: "Comunicação & Atendimento", body: "Por que o melhor marketing começa na recepção e como construir relacionamentos duradouros." },
-  { n: "08", title: "Análise SWOT da Clínica", body: "Forças, fraquezas, oportunidades e ameaças aplicadas à realidade do empreendedor da saúde." },
+// Scoped design tokens — Emerald Prestige + Cormorant/Karla.
+// Não tocamos no styles.css global; tudo vive dentro deste escopo.
+const tokens = {
+  "--e-ink": "#064e3b",
+  "--e-emerald": "#0d7a5f",
+  "--e-gold": "#c9a84c",
+  "--e-gold-soft": "#e6cf8c",
+  "--e-cream": "#f5f0e0",
+  "--e-cream-deep": "#ece4cd",
+} as React.CSSProperties;
+
+const serif = { fontFamily: "'Cormorant Garamond', Georgia, serif" } as React.CSSProperties;
+const body = { fontFamily: "'Karla', system-ui, sans-serif" } as React.CSSProperties;
+
+const featured = [
+  {
+    kicker: "Cap. 01 — Fundação",
+    title: "Primeiros Passos",
+    excerpt:
+      "Resumo executivo, estrutura organizacional e jurídica, plano de marketing e financeiro. A leitura de raio-X que toda clínica precisa antes do CNPJ.",
+  },
+  {
+    kicker: "Cap. 02 — Modelo",
+    title: "Qual CNPJ é o seu?",
+    excerpt:
+      "MEI, Sociedade Unipessoal, EPP ou Franquia — vantagens, limites e armadilhas tributárias. Como escolher o formato que protege o seu lucro.",
+  },
 ];
 
-const forWho = [
-  "Fisioterapeutas, dentistas, médicos e profissionais da saúde prontos para abrir a primeira clínica",
-  "Empreendedores que já operam mas sentem que a clínica está desorganizada e insegura juridicamente",
-  "Profissionais que querem sair do CLT e estruturar um negócio próprio com método e segurança",
-  "Gestores que precisam regularizar a Vigilância Sanitária e os conselhos profissionais",
+const grid = [
+  { n: "03", title: "Passo a Passo para Abrir", body: "Do contrato social ao alvará: o caminho documental sem retrabalho." },
+  { n: "04", title: "Pasta Sanitária", body: "Cada documento exigido pela Vigilância, em ordem e com checklist." },
+  { n: "05", title: "Gestão de Processos", body: "POPs, fluxogramas e tecnologia para eliminar gargalos da operação." },
+  { n: "06", title: "Sustentabilidade Financeira", body: "PF x PJ, fluxo de caixa, precificação e cálculo da hora clínica." },
+  { n: "07", title: "Comunicação & Atendimento", body: "Por que o melhor marketing nasce na recepção da sua clínica." },
+  { n: "08", title: "Análise SWOT", body: "Forças, fraquezas, oportunidades e ameaças aplicadas à saúde." },
 ];
 
 const bonuses = [
   "Checklist completo da Pasta Sanitária",
-  "Modelo de Análise SWOT aplicada à saúde",
+  "Modelo de Análise SWOT aplicada à clínica",
   "Roteiro passo a passo da formalização",
-  "Acesso ao Mentor Estratégico Plan.A para tirar dúvidas sobre o conteúdo",
+  "Acesso ao Mentor Estratégico Plan.A",
 ];
 
 function EbookPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased">
-      {/* NAV */}
-      <header className="absolute top-0 left-0 right-0 z-20">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-12">
-          <a href="/" className="flex items-center gap-3">
-            <img src={planaLogo} alt="Grupo Plan.A" className="h-12 w-12 rounded-full object-cover ring-1 ring-[var(--cream-deep)]" />
-          </a>
+    <div
+      className="min-h-screen antialiased"
+      style={{
+        ...tokens,
+        ...body,
+        background: "var(--e-cream)",
+        color: "var(--e-ink)",
+      }}
+    >
+      {/* MASTHEAD */}
+      <header
+        className="border-b"
+        style={{ borderColor: "color-mix(in oklab, var(--e-ink) 15%, transparent)" }}
+      >
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-12">
+          <div className="flex items-center gap-4">
+            <span
+              className="text-[10px] uppercase tracking-[0.35em]"
+              style={{ color: "var(--e-emerald)" }}
+            >
+              Plan.A Editions
+            </span>
+          </div>
+          <p className="hidden md:block text-[10px] uppercase tracking-[0.35em]" style={{ color: "var(--e-emerald)" }}>
+            Vol. 01 · 2026 · Saúde & Empreendedorismo
+          </p>
           <a
             href={CHECKOUT_URL}
-            className="rounded-full bg-[var(--ink)] px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] text-[var(--cream)] hover:bg-[var(--sage-deep)] transition"
+            className="rounded-none border px-5 py-2 text-[10px] uppercase tracking-[0.3em] transition hover:opacity-80"
+            style={{
+              borderColor: "var(--e-ink)",
+              background: "var(--e-ink)",
+              color: "var(--e-cream)",
+            }}
           >
-            Quero meu ebook
+            Comprar
           </a>
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--accent) 40%, transparent) 0%, transparent 70%), var(--background)",
-          }}
-        />
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 md:grid-cols-2 md:px-12">
-          <div>
-            <p className="mb-6 text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">
-              Ebook Plan.A • Edição 2026
-            </p>
-            <h1 className="font-serif-display text-5xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight text-[var(--ink)]">
-              Um guia completo para <em className="italic font-light">abrir sua clínica</em> com método.
-            </h1>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-[var(--sage-deep)]">
-              Escrito por Maisa Valar — fisioterapeuta, advogada empresarial e gestora de clínicas há mais de 23 anos. O passo a passo que tira sua clínica da ideia e a coloca em operação segura, regularizada e lucrativa.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href={CHECKOUT_URL}
-                className="rounded-full bg-[var(--ink)] px-8 py-4 text-xs uppercase tracking-[0.22em] text-[var(--cream)] hover:bg-[var(--sage-deep)] transition"
-              >
-                Comprar agora
-              </a>
-              <a
-                href="#conteudo"
-                className="text-xs uppercase tracking-[0.22em] text-[var(--sage-deep)] underline-offset-4 hover:underline"
-              >
-                Ver o que você vai aprender
-              </a>
-            </div>
-            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-[var(--sage-deep)]">
-              Acesso imediato • PDF + bônus
-            </p>
-          </div>
-
-          <div className="relative">
-            <div
-              aria-hidden
-              className="absolute -inset-6 -z-10 rounded-[2rem]"
-              style={{
-                background:
-                  "linear-gradient(135deg, color-mix(in oklab, var(--accent) 50%, transparent), transparent)",
-              }}
-            />
-            <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl shadow-2xl ring-1 ring-[var(--cream-deep)]">
-              <img src={ebookCover} alt="Capa do ebook Plan.A" className="h-full w-full object-cover" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[var(--ink)]/80 to-transparent p-6">
-                <p className="font-serif-display text-2xl italic text-[var(--cream)]">Plan.A</p>
-                <p className="text-[11px] uppercase tracking-[0.25em] text-[var(--cream)]/80">
-                  Guia para abrir sua clínica
+      {/* HERO — MAGAZINE COVER */}
+      <section className="border-b" style={{ borderColor: "color-mix(in oklab, var(--e-ink) 15%, transparent)" }}>
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-14 md:py-20">
+          <div className="grid gap-12 md:grid-cols-12 md:gap-16">
+            {/* Left: editorial title */}
+            <div className="md:col-span-7 flex flex-col justify-between">
+              <div>
+                <p
+                  className="text-[11px] uppercase tracking-[0.4em] mb-8"
+                  style={{ color: "var(--e-gold)", ...body }}
+                >
+                  — A Edição do Empreendedor da Saúde —
                 </p>
+                <h1
+                  className="text-[68px] md:text-[120px] leading-[0.92] tracking-[-0.02em]"
+                  style={serif}
+                >
+                  Abra
+                  <br />
+                  sua <em className="italic font-light" style={{ color: "var(--e-gold)" }}>clínica</em>
+                  <br />
+                  com método.
+                </h1>
               </div>
+
+              <div className="mt-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+                <p className="max-w-md text-[15px] leading-[1.7]" style={{ color: "color-mix(in oklab, var(--e-ink) 80%, transparent)" }}>
+                  Um guia editorial em oito capítulos, escrito por <strong>Maisa Valar</strong> — fisioterapeuta, advogada empresarial e gestora de clínicas há 23 anos.
+                </p>
+                <a
+                  href={CHECKOUT_URL}
+                  className="inline-flex items-center justify-center px-8 py-4 text-[11px] uppercase tracking-[0.3em] transition hover:opacity-90"
+                  style={{
+                    background: "var(--e-gold)",
+                    color: "var(--e-ink)",
+                  }}
+                >
+                  Comprar ebook
+                </a>
+              </div>
+            </div>
+
+            {/* Right: cover image with caption */}
+            <div className="md:col-span-5">
+              <figure className="relative">
+                <div
+                  className="aspect-[3/4] w-full overflow-hidden"
+                  style={{
+                    boxShadow:
+                      "0 30px 60px -20px color-mix(in oklab, var(--e-ink) 50%, transparent)",
+                  }}
+                >
+                  <img src={ebookCover} alt="Capa do ebook Plan.A" className="h-full w-full object-cover" />
+                </div>
+                <figcaption
+                  className="mt-4 flex items-center justify-between text-[10px] uppercase tracking-[0.3em]"
+                  style={{ color: "var(--e-emerald)" }}
+                >
+                  <span>Cover · Edição 2026</span>
+                  <span>56 pp · PDF</span>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PROMISE */}
-      <section className="border-y border-[var(--cream-deep)] bg-[color-mix(in_oklab,var(--accent)_25%,var(--background))] py-16">
-        <div className="mx-auto max-w-5xl px-6 text-center md:px-12">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">A promessa</p>
-          <p className="mt-6 font-serif-display text-3xl md:text-4xl leading-snug text-[var(--ink)]">
-            Você não precisa abrir sua clínica no escuro. Em poucas horas de leitura, você terá clareza sobre o modelo jurídico, a documentação sanitária, a precificação e a operação que sua clínica precisa para nascer pronta para crescer.
+      {/* PULL QUOTE */}
+      <section
+        className="border-b"
+        style={{
+          background: "var(--e-ink)",
+          color: "var(--e-cream)",
+          borderColor: "color-mix(in oklab, var(--e-ink) 15%, transparent)",
+        }}
+      >
+        <div className="mx-auto max-w-[1100px] px-6 md:px-12 py-20 md:py-28 text-center">
+          <p className="text-[10px] uppercase tracking-[0.4em] mb-8" style={{ color: "var(--e-gold)" }}>
+            Editorial
+          </p>
+          <blockquote className="text-3xl md:text-5xl leading-[1.15] italic" style={serif}>
+            “Você não precisa abrir sua clínica no escuro. Em poucas horas de leitura, você terá clareza sobre o modelo jurídico, a documentação sanitária, a precificação e a operação que sua clínica precisa para nascer pronta para crescer.”
+          </blockquote>
+          <p className="mt-10 text-[11px] uppercase tracking-[0.35em]" style={{ color: "var(--e-gold-soft)" }}>
+            Maisa Valar — Sócia, Grupo Plan.A
           </p>
         </div>
       </section>
 
-      {/* CHAPTERS */}
-      <section id="conteudo" className="py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="mb-16 max-w-2xl">
-            <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">O que você vai aprender</p>
-            <h2 className="mt-4 font-serif-display text-4xl md:text-5xl text-[var(--ink)]">
-              Oito capítulos práticos, do CNPJ ao crescimento.
+      {/* FEATURED ARTICLES (magazine top stories) */}
+      <section className="border-b" style={{ borderColor: "color-mix(in oklab, var(--e-ink) 15%, transparent)" }}>
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-20 md:py-28">
+          <div className="flex items-end justify-between border-b pb-6 mb-12" style={{ borderColor: "color-mix(in oklab, var(--e-ink) 25%, transparent)" }}>
+            <h2 className="text-3xl md:text-5xl" style={serif}>
+              Nesta edição
             </h2>
+            <p className="text-[10px] uppercase tracking-[0.35em]" style={{ color: "var(--e-emerald)" }}>
+              Capítulos em destaque
+            </p>
           </div>
 
-          <div className="grid gap-px overflow-hidden rounded-2xl bg-[var(--cream-deep)] md:grid-cols-2">
-            {chapters.map((c) => (
-              <article key={c.n} className="bg-background p-8 md:p-10">
-                <div className="flex items-baseline gap-4">
-                  <span className="font-serif-display text-2xl italic text-[var(--sage-deep)]">{c.n}</span>
-                  <h3 className="font-serif-display text-2xl text-[var(--ink)]">{c.title}</h3>
-                </div>
-                <p className="mt-4 text-[15px] leading-relaxed text-[var(--sage-deep)]">{c.body}</p>
+          <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+            {featured.map((f) => (
+              <article key={f.title}>
+                <p className="text-[10px] uppercase tracking-[0.35em] mb-4" style={{ color: "var(--e-gold)" }}>
+                  {f.kicker}
+                </p>
+                <h3 className="text-4xl md:text-6xl leading-[0.95] mb-6" style={serif}>
+                  {f.title}
+                </h3>
+                <p className="text-[16px] leading-[1.7]" style={{ color: "color-mix(in oklab, var(--e-ink) 78%, transparent)" }}>
+                  {f.excerpt}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* AUTHOR */}
-      <section className="bg-[color-mix(in_oklab,var(--accent)_18%,var(--background))] py-24 md:py-32">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 md:grid-cols-[1fr_1.2fr] md:px-12">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl ring-1 ring-[var(--cream-deep)]">
-            <img src={maisaPortrait} alt="Maisa Valar" className="h-full w-full object-cover" />
-          </div>
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">Sobre a autora</p>
-            <h2 className="mt-4 font-serif-display text-4xl md:text-5xl text-[var(--ink)]">Maisa Valar</h2>
-            <p className="mt-6 text-lg leading-relaxed text-[var(--sage-deep)]">
-              Fisioterapeuta, advogada empresarial (OAB/SC) e sócia do Grupo Plan.A. À frente do Centromédico — Serviços de Saúde desde 2004, soma mais de duas décadas estruturando, regularizando e fazendo crescer clínicas multidisciplinares.
-            </p>
-            <p className="mt-4 text-lg leading-relaxed text-[var(--sage-deep)]">
-              Este ebook reúne o método que ela aplica diariamente em mentorias e consultorias — agora ao alcance de quem quer abrir a clínica certa, da forma certa, desde o primeiro dia.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FOR WHO */}
-      <section className="py-24 md:py-32">
-        <div className="mx-auto max-w-6xl px-6 md:px-12">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">Para quem é</p>
-          <h2 className="mt-4 font-serif-display text-4xl md:text-5xl text-[var(--ink)]">
-            Este ebook é para você se…
-          </h2>
-          <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl bg-[var(--cream-deep)] md:grid-cols-2">
-            {forWho.map((item, i) => (
-              <li key={i} className="flex items-start gap-4 bg-background p-8">
-                <span className="font-serif-display text-xl italic text-[var(--sage-deep)]">0{i + 1}</span>
-                <p className="text-[15px] leading-relaxed text-[var(--ink)]">{item}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* BONUS */}
-      <section className="bg-[var(--ink)] py-24 md:py-32 text-[var(--cream)]">
-        <div className="mx-auto max-w-5xl px-6 text-center md:px-12">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--cream)]/60">Bônus inclusos</p>
-          <h2 className="mt-4 font-serif-display text-4xl md:text-5xl">
-            Mais que um ebook — um kit de partida.
-          </h2>
-          <ul className="mt-12 grid gap-4 text-left md:grid-cols-2">
-            {bonuses.map((b, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-4 rounded-xl border border-[var(--cream)]/15 p-6"
-              >
-                <span className="font-serif-display text-xl italic text-[var(--cream)]/70">+</span>
-                <p className="text-[15px] leading-relaxed">{b}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* OFFER / CTA */}
-      <section className="py-24 md:py-32">
-        <div className="mx-auto max-w-4xl px-6 text-center md:px-12">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--sage-deep)]">A oferta</p>
-          <h2 className="mt-4 font-serif-display text-5xl md:text-6xl text-[var(--ink)]">
-            Sua clínica começa <em className="italic font-light">aqui</em>.
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-[var(--sage-deep)]">
-            Acesso imediato ao ebook completo em PDF, mais os bônus práticos. Pagamento único e seguro via Kiwify.
+      {/* GRID of remaining chapters */}
+      <section className="border-b" style={{ borderColor: "color-mix(in oklab, var(--e-ink) 15%, transparent)" }}>
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-20 md:py-28">
+          <p className="text-[10px] uppercase tracking-[0.35em] mb-6" style={{ color: "var(--e-emerald)" }}>
+            Sumário
           </p>
+          <h2 className="text-3xl md:text-5xl mb-14" style={serif}>
+            Mais capítulos
+          </h2>
 
-          <div className="mt-12 inline-flex flex-col items-center gap-4 rounded-2xl border border-[var(--cream-deep)] bg-background p-10 shadow-sm">
-            <p className="text-xs uppercase tracking-[0.25em] text-[var(--sage-deep)]">Ebook Plan.A</p>
-            <p className="font-serif-display text-5xl text-[var(--ink)]">Acesso vitalício</p>
+          <div
+            className="grid gap-px"
+            style={{
+              background: "color-mix(in oklab, var(--e-ink) 18%, transparent)",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            }}
+          >
+            {grid.map((g) => (
+              <article
+                key={g.n}
+                className="p-8 md:p-10"
+                style={{ background: "var(--e-cream)" }}
+              >
+                <div className="flex items-baseline gap-4 mb-4">
+                  <span className="text-4xl italic" style={{ ...serif, color: "var(--e-gold)" }}>
+                    {g.n}
+                  </span>
+                  <h3 className="text-2xl" style={serif}>
+                    {g.title}
+                  </h3>
+                </div>
+                <p className="text-[14px] leading-[1.65]" style={{ color: "color-mix(in oklab, var(--e-ink) 78%, transparent)" }}>
+                  {g.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AUTHOR — editorial profile */}
+      <section
+        className="border-b"
+        style={{
+          background: "var(--e-cream-deep)",
+          borderColor: "color-mix(in oklab, var(--e-ink) 15%, transparent)",
+        }}
+      >
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-20 md:py-28">
+          <div className="grid gap-14 md:grid-cols-12 md:gap-16 items-center">
+            <figure className="md:col-span-5">
+              <div className="aspect-[4/5] w-full overflow-hidden">
+                <img src={maisaPortrait} alt="Maisa Valar" className="h-full w-full object-cover grayscale-[20%]" />
+              </div>
+              <figcaption className="mt-4 text-[10px] uppercase tracking-[0.35em]" style={{ color: "var(--e-emerald)" }}>
+                Retrato · Maisa Valar, OAB/SC
+              </figcaption>
+            </figure>
+            <div className="md:col-span-7">
+              <p className="text-[10px] uppercase tracking-[0.4em] mb-6" style={{ color: "var(--e-gold)" }}>
+                A autora
+              </p>
+              <h2 className="text-5xl md:text-7xl leading-[0.95] mb-8" style={serif}>
+                Maisa <em className="italic font-light">Valar</em>
+              </h2>
+              <p className="text-[16px] leading-[1.75] mb-5" style={{ color: "color-mix(in oklab, var(--e-ink) 82%, transparent)" }}>
+                Fisioterapeuta, advogada empresarial e sócia do Grupo Plan.A. À frente do Centromédico — Serviços de Saúde desde 2004, soma mais de duas décadas estruturando, regularizando e fazendo crescer clínicas multidisciplinares.
+              </p>
+              <p className="text-[16px] leading-[1.75]" style={{ color: "color-mix(in oklab, var(--e-ink) 82%, transparent)" }}>
+                Este ebook reúne o método que ela aplica diariamente em mentorias e consultorias — agora ao alcance de quem quer abrir a clínica certa, da forma certa, desde o primeiro dia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BONUS strip */}
+      <section
+        className="border-b"
+        style={{
+          background: "var(--e-ink)",
+          color: "var(--e-cream)",
+          borderColor: "color-mix(in oklab, var(--e-ink) 15%, transparent)",
+        }}
+      >
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-20">
+          <div className="grid gap-10 md:grid-cols-[auto_1fr] md:gap-16 md:items-center">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.4em] mb-4" style={{ color: "var(--e-gold)" }}>
+                Inclusos
+              </p>
+              <h2 className="text-4xl md:text-5xl" style={serif}>
+                Mais que um <em className="italic">ebook</em>.
+              </h2>
+            </div>
+            <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+              {bonuses.map((b) => (
+                <li
+                  key={b}
+                  className="flex items-start gap-4 border-t py-4 text-[14px] leading-[1.6]"
+                  style={{ borderColor: "color-mix(in oklab, var(--e-cream) 18%, transparent)" }}
+                >
+                  <span className="text-xl" style={{ ...serif, color: "var(--e-gold)" }}>+</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* CHECKOUT — final stand */}
+      <section>
+        <div className="mx-auto max-w-[1100px] px-6 md:px-12 py-24 md:py-32 text-center">
+          <p className="text-[10px] uppercase tracking-[0.4em] mb-8" style={{ color: "var(--e-emerald)" }}>
+            Acesso imediato
+          </p>
+          <h2 className="text-6xl md:text-8xl leading-[0.95] mb-10" style={serif}>
+            Sua clínica
+            <br />
+            <em className="italic font-light" style={{ color: "var(--e-gold)" }}>começa aqui.</em>
+          </h2>
+
+          <div
+            className="mx-auto inline-flex flex-col items-center gap-5 px-10 py-12"
+            style={{
+              border: "1px solid color-mix(in oklab, var(--e-ink) 25%, transparent)",
+              background: "var(--e-cream-deep)",
+            }}
+          >
+            <p className="text-[10px] uppercase tracking-[0.35em]" style={{ color: "var(--e-emerald)" }}>
+              Ebook Plan.A · Edição 2026
+            </p>
+            <p className="text-5xl" style={serif}>
+              Acesso vitalício
+            </p>
+            <p className="text-[13px] leading-[1.6] max-w-sm" style={{ color: "color-mix(in oklab, var(--e-ink) 75%, transparent)" }}>
+              Pagamento único e seguro via Kiwify. PDF + bônus entregues no seu e-mail em instantes.
+            </p>
             <a
               href={CHECKOUT_URL}
-              className="mt-4 rounded-full bg-[var(--ink)] px-10 py-4 text-xs uppercase tracking-[0.22em] text-[var(--cream)] hover:bg-[var(--sage-deep)] transition"
+              className="mt-4 inline-flex items-center justify-center px-12 py-5 text-[11px] uppercase tracking-[0.3em] transition hover:opacity-90"
+              style={{
+                background: "var(--e-ink)",
+                color: "var(--e-gold)",
+                borderBottom: "2px solid var(--e-gold)",
+              }}
             >
-              Comprar pelo Kiwify
+              Comprar pelo Kiwify →
             </a>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--sage-deep)]">
-              Entrega imediata por e-mail
-            </p>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-[var(--cream-deep)] py-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-[11px] uppercase tracking-[0.22em] text-[var(--sage-deep)] md:flex-row md:px-12">
+      <footer
+        className="border-t"
+        style={{
+          background: "var(--e-ink)",
+          color: "color-mix(in oklab, var(--e-cream) 70%, transparent)",
+          borderColor: "color-mix(in oklab, var(--e-cream) 20%, transparent)",
+        }}
+      >
+        <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-4 px-6 py-10 text-[10px] uppercase tracking-[0.3em] md:flex-row md:items-center md:px-12">
           <p>© Grupo Plan.A — Maisa Valar</p>
-          <a href="/" className="hover:text-[var(--ink)] transition">Conhecer a mentoria</a>
+          <p style={{ color: "var(--e-gold-soft)" }}>Plan.A Editions · Vol. 01 · 2026</p>
+          <a href="/" className="hover:opacity-80 transition" style={{ color: "var(--e-gold)" }}>
+            Conhecer a mentoria →
+          </a>
         </div>
       </footer>
     </div>
